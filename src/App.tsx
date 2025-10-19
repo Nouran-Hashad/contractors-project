@@ -9,6 +9,12 @@ import Projects from "./pages/Projects";
 import Pricing from "./pages/Pricing";
 import ClientDashboard from "./pages/client/Dashboard";
 import ContractorDashboard from "./pages/contractor/Dashboard";
+import NewProject from "./pages/client/NewProject";
+import ProjectDetails from "./pages/ProjectDetails";
+import SubmitBid from "./pages/SubmitBid";
+import ContractorProfile from "./pages/contractor/Profile";
+import Messages from "./pages/Messages";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,11 +28,17 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/pricing" element={<Pricing />} />
           <Route path="/client/dashboard" element={<ClientDashboard />} />
+          <Route path="/client/new-project" element={<NewProject />} />
           <Route path="/contractor/dashboard" element={<ContractorDashboard />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/contractor/profile" element={<ContractorProfile />} />
+          <Route path="/contractor/:id" element={<ContractorProfile />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/projects/:id/submit-bid" element={<SubmitBid />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
